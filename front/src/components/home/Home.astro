@@ -1,0 +1,7 @@
+---
+import SearchBar from "../SearchBar";
+import {getHeroes} from "../../utils/api";
+const heroes = await getHeroes();
+---
+
+<SearchBar heroes={heroes} client:load />

@@ -1,0 +1,20 @@
+{
+  "name": "front",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "json-server": "json-server --watch db.json --port 3000",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^5.0.2",
+    "@astrojs/tailwind": "^5.1.4",
+    "astro": "^5.1.6",
+    "json-server": "^0.17.4",
+    "solid-js": "^1.9.4",
+    "tailwindcss": "^3.4.17"
+  }
+}

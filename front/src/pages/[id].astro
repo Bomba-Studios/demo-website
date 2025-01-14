@@ -1,0 +1,25 @@
+---
+import { getHeroes, getHeroById } from "../utils/api";
+export async function getStaticPaths() {
+    const heroes = await getHeroes();
+    return heroes.map((heroe) => ({
+        params: { id: heroe.id.toString() },
+    }));
+}
+const { id } = Astro.params;
+const heroe = await getHeroById(id);
+---
+
+<div class="max-w-3xl mx-auto p-4">
+    <img
+        src={heroe.images.md}
+        alt={heroe.name}
+        class="w-full h-auto mb-4 rounded-lg"
+    />
+    <h1 class="text-2xl font-bold mb-2">{heroe.name}</h1>
+    <p><strong>Género:</strong> {heroe.appearance.gender}</p>
+    <p><strong>Altura:</strong> {heroe.appearance.height.join(" / ")}</p>
+    <p><strong>Peso:</strong> {heroe.appearance.weight.join(" / ")}</p>
+    <p><strong>Raza:</strong> {heroe.appearance.race}</p>
+    <p><strong>Trabajo:</strong> {heroe.work.occupation}</p>
+</div>

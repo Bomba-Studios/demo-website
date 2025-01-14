@@ -1,0 +1,22 @@
+---
+import Footer from "../components/layout/Footer.astro";
+import Header from "../components/layout/Header.astro";
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{Astro.props.title}</title>
+		<meta name="description" content={Astro.props.description} />
+	</head>
+	<div class="container mx-auto">
+		<Header />
+		<body>
+			<slot />
+		</body>
+		<Footer />
+	</div>
+</html>
